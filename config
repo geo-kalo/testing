@@ -1,0 +1,39 @@
+#Host github.com
+#   user git
+#   port 22
+#Host github.com
+#    User git
+#    IdentityFile ~/.ssh/ci_cd_testing_key
+#    IdentitiesOnly yes
+#    port 22
+Host github-ci-cd
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/ci_cd_testing_key
+    IdentitiesOnly yes
+    Port 22
+
+Host github-my-lab
+    HostName github.com
+    User git
+    #IdentitiesOnly yes
+    Port 22
+
+Host github-testing
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_testing
+    IdentitiesOnly yes
+    Port 22
+
+Host repos.infinityfleet.net
+   user git
+   port 49803
+Host *
+     #ForwardAgent yes
+     Port 49803
+     StrictHostKeyChecking no
+HostKeyAlgorithms +ssh-rsa
+PubkeyAcceptedKeyTypes +ssh-rsa,ssh-dss
+KexAlgorithms ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1
+
